@@ -36,9 +36,9 @@ module.exports.getById = (id, callback) => {
     User.findByID(id, callback);
 }
 
-module.exports.comparePassword = function(inputPassword, hash, callback){
-    bcrypt.compare(inputPassword, hash, function(err, isMatch) {
-      if(err){ throw err; }
-      callback(null, isMatch);
+module.exports.validPassword = function(inputPassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+    	if(err) throw err;
+    	callback(null, isMatch);
     });
   }
