@@ -10,6 +10,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const passport = require('passport');
+const localStrategy = require('passport-local').Strategy();
 const User = require('./models/Users');
 
 app.use(cors());
@@ -30,12 +31,52 @@ app.use(session({
     resave: true
 }));
 
+// Passport Strategy
+
+passport.use(new localStrategy((username, password, done) => {
+    User.getByUsername(username, (err, user) => {
+        if(err){throw err;}
+        if(!user){
+            return done(null, false, {message: 'Unknown User'});
+        }
+        User.comparePassword(password, user.password, (err, match) => {
+            if(err){throw err;}
+            if(match){
+                return done(null, user);
+            }
+            else{
+                return done(null, false, {message: 'Invalid password'});
+            }
+        });
+    });
+}));
+
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    User.getById(id, (err, user) => {
+        done(err, user);
+    });
+});
+
 // Routing
 
 api.route("/login").post(function(req, res){
-    console.log("Recieved LOGIN request.");
-    //TODO: Implement login using passportjs
+    passport.authenticate('local', (req, res) => {
+        res.send(req.user);
+    });
 });
+
+api.route("/user").get((req, res) => {
+    res.send(req.user);
+});
+
+api.get("/logout").get((req, res) => {
+    req.logout();
+    res.send(null);
+})
 
 api.route("/signup").post(function(req, res){
     console.log("Recieved SIGNUP request.");
