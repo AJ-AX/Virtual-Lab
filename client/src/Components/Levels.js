@@ -8,7 +8,7 @@ export default class LevelPage extends React.Component{
     render(){
         return(
             <>
-            <HeadBar state="index"/>
+            <HeadBar breadcrumbs='true'/>
             <SubmenuHeader color="#548135" 
             showoptions="true"
             title="All Levels"

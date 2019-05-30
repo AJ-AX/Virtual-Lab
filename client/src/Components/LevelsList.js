@@ -15,7 +15,7 @@ class ListItem extends React.Component{
                 }
                 <List.Content>
                     <List.Header as='a'>{el.name}</List.Header>
-                    <List.Description as='a'>Updated 20 Years Ago</List.Description>
+                    <List.Description as='a'>Updated 0 Years Ago</List.Description>
                 </List.Content>
             </List.Item>
         ));

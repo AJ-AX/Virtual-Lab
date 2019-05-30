@@ -1,12 +1,13 @@
 import React from 'react';
 import IndexPage from './Components/Index';
 import LevelPage from './Components/Levels';
+import InstructorView from './Components/InstructorView';
 
 export default class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      page: "Workpage",
+      page: "Index",
     }
   }
   render(){
@@ -20,6 +21,11 @@ export default class App extends React.Component {
     else if(this.state.page == "Workpage"){
       return(
         <LevelPage />
+      )
+    }
+    else if(this.state.page == "InstructorView"){
+      return(
+        <InstructorView />
       )
     }
   }
