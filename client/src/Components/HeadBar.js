@@ -52,7 +52,7 @@ const styles = {
         alignItems: 'center',
         backgroundColor: '#f2f2f2',
         position: 'fixed',
-        display: 'flex'
+        display: 'flex',
     },
     logo:{
         height: '100%',
