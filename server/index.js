@@ -75,11 +75,6 @@ api.get("/logout").get((req, res) => {
     res.send(null);
 })
 
-api.route("/signup").post(function(req, res){
-    console.log("Recieved SIGNUP request.");
-    //TODO: Implement auth using passportjs
-});
-
 api.route("/register").post(function(req, res){
     let password = req.body.password;
     let confirmPwd = req.body.confirmPwd;
