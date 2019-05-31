@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Modal, Button, Input, Icon } from 'semantic-ui-react'
+import { Form, Modal, Button, Input, Icon } from 'semantic-ui-react'
 
 export default class LoginModal extends React.Component{
   render(){
@@ -8,16 +8,25 @@ export default class LoginModal extends React.Component{
         closeOnEscape={true}
         closeOnRootNodeClick={true}
         onClose={this.props.close}
+        size="tiny"
         >
         <Modal.Header>Log In</Modal.Header>
           <Modal.Content>
-            <Input icon='users' iconPosition='left' placeholder='Username' />
-            <Input placeholder="Password" />
+            <Form>
+              <Form.Field>
+                <label>Username</label>
+                <Input placeholder="Username" />
+              </Form.Field>
+              <Form.Field>
+                <label>Password</label>
+                <Input placeholder="Password" type="password" />
+              </Form.Field>
+            </Form>
           </Modal.Content>
           <Modal.Actions>
             <Button negative>Forgot Password</Button>
             <Button primary>
-              Sign In <Icon name='chevron right' />
+              Log In <Icon name='chevron right' />
             </Button>
           </Modal.Actions>
       </Modal>

@@ -8,10 +8,16 @@ import EditImage from '../assets/edit.png';
 
 export default class SubmenuHeader extends React.Component{
     render(){
-        let ColorStyle = Object.assign(styles.bar);
-        ColorStyle.backgroundColor = this.props.color;
+        //var ColorStyle = Object.assign(styles.bar);
+        //ColorStyle.backgroundColor = this.props.color;
         return(
-            <div style={ColorStyle}>
+            <div style={{width: '100%',
+            position: 'fixed',
+            height: '8%',
+            top: '8%',
+            alignItems: 'center',
+            backgroundColor: this.props.color
+            }}>
                 <Button style={styles.title}>{this.props.title}</Button>
                 { this.props.showoptions == "true" &&
                 <div style={styles.actions}>

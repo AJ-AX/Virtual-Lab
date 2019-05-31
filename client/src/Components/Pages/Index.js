@@ -1,6 +1,6 @@
 import React from 'react';
-import HeadBar from './HeadBar';
-import SRimg from '../assets/SR.jpg';
+import HeadBar from '../HeadBar';
+import SRimg from '../../assets/SR.jpg';
 
 export default class IndexPage extends React.Component{
     

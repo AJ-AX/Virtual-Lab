@@ -1,7 +1,8 @@
 import React from 'react';
-import IndexPage from './Components/Index';
-import LevelPage from './Components/Levels';
-import InstructorView from './Components/InstructorView';
+import IndexPage from './Components/Pages/Index';
+import LevelPage from './Components/Pages/Levels';
+import InstructorView from './Components/Pages/InstructorView';
+import ProblemPage from './Components/Pages/Problems';
 
 export default class App extends React.Component {
   constructor(){
@@ -27,6 +28,11 @@ export default class App extends React.Component {
       return(
         <InstructorView />
       )
+    }
+    else if(this.state.page =="Problems"){
+      return(
+        <ProblemPage />
+      );
     }
   }
 }

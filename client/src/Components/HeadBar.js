@@ -1,8 +1,8 @@
 import React from 'react';
-import img from '../assets/free-bird.png';
+import img from '../assets/pure_logo.svg';
 import Button from '@material-ui/core/Button';
-import LoginModal from "./LoginModal";
-import SignupModal from "./SignupModal";
+import LoginModal from "./Modals/LoginModal";
+import SignupModal from "./Modals/SignupModal";
 import BreadcrumbHolder from './BreadcrumbHolder';
 
 export default class HeadBar extends React.Component{
@@ -64,7 +64,7 @@ const styles = {
         justifyContent: 'flex-start'
     },
     logo:{
-        height: '100%',
+        marginTop: '0.5%',
         flex: 1,
         alignSelf: 'flex-start'
     },
@@ -72,7 +72,7 @@ const styles = {
         maxHeight: 'auto'
     },
     logoimage:{
-        maxHeight: '40px',
+        maxHeight: '100%',
         maxWidth: '100px'
     },
     signup:{

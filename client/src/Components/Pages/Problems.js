@@ -1,24 +1,24 @@
 import React from "react";
-import HeadBar from './HeadBar';
-import SubmenuHeader from './Submenu'
-import { Button } from 'semantic-ui-react'
-import LevelsList from './LevelsList'
+import HeadBar from '../HeadBar';
+import SubmenuHeader from '../Submenu';
+import { Button } from 'semantic-ui-react';
+import ProblemsList from '../ProblemsList';
 
-export default class LevelPage extends React.Component{
+export default class ProblemPage extends React.Component{
     render(){
         return(
             <>
-            <HeadBar breadcrumbs='true'/>
-            <SubmenuHeader color="#548135" 
+            <HeadBar breadcrumbs="true" />
+            <SubmenuHeader color="#cb9100"
             showoptions="true"
-            title="All Levels"
+            title="All Problems"
             />
             <div style={styles.body}>
                 <div style={styles.border}>
-                <Button color="green" style={styles.addbutton}>New</Button>
+                    <Button color="orange" style={styles.addbutton}>New</Button>
                     <div style={styles.list}>
                         <div style={styles.overflow}>
-                            <LevelsList />
+                            <ProblemsList />
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const styles = {
     },
     addbutton: {
         marginTop: '6%',
-        marginLeft: '13%',
+        marginLeft: '33%',
     },
     border:{
         borderRight: '1%',
@@ -50,5 +50,6 @@ const styles = {
         overflow: 'auto',
         position: 'absolute',
         maxHeight: '82%',
+        width: '75%'
     }
 }
